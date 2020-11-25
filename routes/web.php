@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 'Pantalla principal';
+    return view('home');
 });
 
 Route::get('login', function () {
-    return 'Login usuario';
+    return view('auth.login');
 });
 
 Route::get('logout', function () {
@@ -26,17 +26,17 @@ Route::get('logout', function () {
 });
 
 Route::get('productos', function () {
-    return 'Listado productos';
+    return view('productos.index');
 });
 
 Route::get('productos/show/{id}', function ($id) {
-    return 'Vista detalle producto ' . $id;
+    return view('productos.show', array('id' => $id));
 });
 
 Route::get('productos/create', function () {
-    return 'Añadir producto';
+    return view('productos.create');
 });
 
 Route::get('productos/edit/{id}', function ($id) {
-    return 'Modificar producto ' . $id;
+    return view('productos.edit', array('id' => $id));
 });
